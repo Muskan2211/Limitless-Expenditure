@@ -1,0 +1,49 @@
+<%- include('header') -%>
+  <h1>INCOME</h1>
+  <% var sumv=0; %>
+  <% newexpense.forEach(function(item){ %>
+    <% if(item.typ=="INCOME"){%>
+      <form action="/deletedaily" method="post">
+        <div class="data">
+          <input type="checkbox" onChange="this.form.submit()" name="dailybox" value="<%=item._id%>" >
+          <p><%=item.date%></p>
+          <p><%=item.name%></p>
+          <p><%=item.amount%></p>
+          <p><%=item.desc%></p>
+          <% sumv=sumv+parseFloat(item.amount);%>
+        </div>
+      </form>
+    <% } %>
+  <%});%>
+
+  <h1>EXPENDITUE</h1>
+  <% newexpense.forEach(function(item){ %>
+    <% if(item.typ=="EXPENCE"){%>
+      <form action="/deletedaily" method="post">
+        <div class="data">
+          <input type="checkbox" onChange="this.form.submit()" name="dailybox" value="<%=item._id%>"  >
+          <p><%=item.date%></p>
+          <p><%=item.name%></p>
+          <p><%=item.amount%></p>
+          <p><%=item.desc%></p>
+          <% sumv=sumv-parseFloat(item.amount);%>
+        </div>
+      </form>
+    <% } %>
+  <%});%>
+<p>toal savings</p> <p><%=sumv%> RS</p>
+<div class="dailybox">
+  <form class="" action="/daily" method="post">
+      <input type="date" name="newdate" value="2020-11-03">
+      <select class="" name="expensetype">
+        <option value="INCOME" selected>INCOME</option>
+        <option value="EXPENCE">EXPENSE</option>
+      </select>
+      <input type="text" name="itembought" value="">
+      <input type="text" name="price" value="">
+      <textarea name="description" rows="3" cols="20" ></textarea>
+      <button type="submit" name="button">submit</button>
+  </form>
+</div>
+
+<%- include('footer') -%>

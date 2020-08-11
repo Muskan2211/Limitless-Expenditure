@@ -1,0 +1,23 @@
+<%- include('header') -%>
+
+
+
+  <div class="box headmany">
+    <h1> <%=datemat%></h1>
+  </div>
+  <div class="box">
+    <% newListItems.forEach(function(item){ %>
+        <form action="/delete" method="post">
+          <div class="data">
+            <input type="checkbox" onChange="this.form.submit()" name="listbox" value="<%=item._id%>">
+            <p><%=item.name%></p>
+          </div>
+        </form>
+    <%});%>
+    <form class="" action="/list" method="post">
+      <input class="headymanyform" type="text" name="tasktodoform" autocomplete="off">
+      <button type="submit" class="newday"> + </button>
+    </form>
+  </div>
+
+<%- include('footer') -%>
