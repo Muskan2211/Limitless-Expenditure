@@ -68,6 +68,7 @@ var year=today.getFullYear();
 var islogin=false;
 
 app.get("/", function(req, res){
+
   res.render("home", {yearmat:year, btntype:islogin});
 });
 
@@ -151,7 +152,7 @@ app.post("/daily", function(req, res){
   let itembuy=req.body.itembought;
   let money=req.body.price;
   let describ=req.body.description;
-  console.log(req.body);
+  
   let taskitem={
     date:currday,
     typ:savetype,
@@ -159,8 +160,6 @@ app.post("/daily", function(req, res){
     amount:money,
     desc:describ
   };
-
-  console.log(req.body);
 
   Item.findById(req.user.id, function(err, foundUser){
     if(err){

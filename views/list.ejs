@@ -2,20 +2,20 @@
 
 
 
-  <div class="box headmany">
+  <div class="box" id="headinglist">
     <h1> <%=datemat%></h1>
   </div>
   <div class="box">
     <% newListItems.forEach(function(item){ %>
         <form action="/delete" method="post">
-          <div class="data">
+          <div class="item">
             <input type="checkbox" onChange="this.form.submit()" name="listbox" value="<%=item._id%>">
-            <p><%=item.name%></p>
+            <p class="listcheck"><%=item.name%></p>
           </div>
         </form>
     <%});%>
-    <form class="" action="/list" method="post">
-      <input class="headymanyform" type="text" name="tasktodoform" autocomplete="off">
+    <form class="item" action="/list" method="post">
+      <input class="listtext" type="text" name="tasktodoform" autocomplete="off">
       <button type="submit" class="newday"> + </button>
     </form>
   </div>

@@ -1,0 +1,242 @@
+body{
+	background: #eee;
+  	background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+
+}
+
+/*HEADER SECTION*/
+.headers {
+  background-color: #66bfbf;
+  margin: auto -16px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  padding-right: 3.25rem;
+  padding-left: 2rem;
+}
+
+
+.heading {
+  color: white;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+.tasktab{
+  margin-top:40px;
+  padding-top: 10px;
+  text-align: center;
+  background-color: #b7efcd;
+}
+
+/*TODO LIST*/
+#headinglist {
+  background-color: #66bfbf;
+  text-align: center;
+  color: white;
+}
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #66bfbf;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+input:checked+.listcheck {
+  text-decoration: line-through;
+  text-decoration-color: #66bfbf;
+}
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+
+form.item {
+  text-align: center;
+  margin-left: 20px;
+}
+
+.newday{
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #66bfbf;
+  color: #fff;
+  font-size: 30px;
+  padding-bottom: 6px;
+  border-width: 0;
+}
+
+input[type="text"].listtext {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+    outline: none;
+  box-shadow: inset 0 -3px 0 0 #66bfbf;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+/*EXPENCES*/
+input[type="text"].dailytext {
+  text-align: center;
+  height: 30px;
+  margin-top: 2rem;
+  margin-bottom: 15px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 10rem;
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #66bfbf;
+  margin-right: 1rem;
+}
+
+.price{
+  background-color: #66bfbf;
+  margin: 20px -16px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  padding-right: 3.25rem;
+  padding-left: 2rem;
+}
+
+.pricetotal{
+  background-color: #b7efcd;
+  margin: 20px -16px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  padding-right: 3.25rem;
+  padding-left: 2rem;
+}
+
+
+.priceheading{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: inline-block;
+  color: white;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  font-size: 1.25rem;
+
+}
+
+.pricevalue{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  display: inline-block;
+  color: white;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  float:right;
+  font-size: 1.25rem;
+}
+
+.data{
+  margin: 50px auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.datapara{
+  display: inline-block;
+  margin-left: 5rem;
+  margin-right:5rem;
+}
+
+.divdata{
+  display: block;
+  margin-left: 5rem;
+  margin-right:5rem;	
+}
+
+.formdata{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  display: block;
+}
+
+input[type="date"], select {
+  text-align: center;
+  border: 3px solid #66bfbf;
+  border-radius:10px;
+  background: transparent;
+  width: 10rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+.formbutton{
+  float: right;
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #66bfbf;
+  color: #fff;
+  font-size: 30px;
+}
+
+textarea{
+  border: 3px solid #66bfbf;
+  border-radius:10px;
+  margin-top: 2rem;
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+}
+
+.notes{
+	color: #66bfbf;
+}
+/*LOGIN AND REGISTRATION FORM*/
+.logregform{
+  margin: auto;
+}
+
+.headoflogreg{
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+/* footersection */
+footer {
+  position:relative;
+  text-align: center;
+  top:200px;
+  width: 100%;
+  height: 2.5rem;
+}
+
+.social-icon{
+  margin: 20px 10px;
+}
+
+a:link{color:grey;}
+a:visited{color:black;}
+a:hover{color:#66bfbf;}
+

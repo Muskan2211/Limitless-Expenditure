@@ -1,49 +1,72 @@
 <%- include('header') -%>
-  <h1>INCOME</h1>
+
+  <% var sump=0; %>
   <% var sumv=0; %>
+  <% var sumn=0; %>
+
   <% newexpense.forEach(function(item){ %>
     <% if(item.typ=="INCOME"){%>
       <form action="/deletedaily" method="post">
         <div class="data">
-          <input type="checkbox" onChange="this.form.submit()" name="dailybox" value="<%=item._id%>" >
-          <p><%=item.date%></p>
-          <p><%=item.name%></p>
-          <p><%=item.amount%></p>
-          <p><%=item.desc%></p>
+          <button type="submit" class="btn btn-light" name="dailybox" value="<%=item._id%>"><i class="fas fa-trash-alt"></i></button>
+          <p class="datapara"><%=item.date%></p>
+          <p class="datapara"><%=item.text%></p>
+          <p class="datapara"><i class="fas fa-rupee-sign"></i><%=item.amount%></p>
+          <div class="divdata"><%=item.desc%></div>
           <% sumv=sumv+parseFloat(item.amount);%>
+          <% sump=sump+parseFloat(item.amount);%>
         </div>
       </form>
     <% } %>
   <%});%>
 
-  <h1>EXPENDITUE</h1>
+  <div class="price">
+    <p class="priceheading">Total Income</p> 
+    <p class="pricevalue"><i class="fas fa-rupee-sign"></i><%=sump%> </p>
+  </div>
+
   <% newexpense.forEach(function(item){ %>
     <% if(item.typ=="EXPENCE"){%>
       <form action="/deletedaily" method="post">
         <div class="data">
-          <input type="checkbox" onChange="this.form.submit()" name="dailybox" value="<%=item._id%>"  >
-          <p><%=item.date%></p>
-          <p><%=item.name%></p>
-          <p><%=item.amount%></p>
-          <p><%=item.desc%></p>
+          <button type="submit" name="dailybox" class="btn btn-light" value="<%=item._id%>"><i class="fas fa-trash-alt"></i></button>
+          <p class="datapara"><%=item.date%></p>
+          <p class="datapara"><%=item.text%></p>
+          <p class="datapara"><i class="fas fa-rupee-sign"></i><%=item.amount%></p>
+          <div class="divdata"><%=item.desc%></div>
           <% sumv=sumv-parseFloat(item.amount);%>
+          <% sumn=sumn+parseFloat(item.amount);%>
         </div>
       </form>
     <% } %>
   <%});%>
-<p>toal savings</p> <p><%=sumv%> RS</p>
-<div class="dailybox">
-  <form class="" action="/daily" method="post">
-      <input type="date" name="newdate" value="2020-11-03">
-      <select class="" name="expensetype">
-        <option value="INCOME" selected>INCOME</option>
-        <option value="EXPENCE">EXPENSE</option>
-      </select>
-      <input type="text" name="itembought" value="">
-      <input type="text" name="price" value="">
-      <textarea name="description" rows="3" cols="20" ></textarea>
-      <button type="submit" name="button">submit</button>
-  </form>
-</div>
+
+  <div class="price">
+    <p class="priceheading">Total Expense </p>
+    <p class="pricevalue"><i class="fas fa-rupee-sign"></i><%=sumn%> </p>
+  </div>
+
+  <div class="pricetotal">
+    <p class="priceheading">Total Savings</p> 
+    <p class="pricevalue"><i class="fas fa-rupee-sign"></i><%=sumv%></p>
+  </div>
+
+  <div class="formdata data">
+    <form class="" action="/daily" method="post">
+      <div>
+        <input type="date" name="newdate" value="2020-11-03">
+        <select class="" name="expensetype">
+          <option value="INCOME" selected>INCOME</option>
+          <option value="EXPENCE">EXPENSE</option>
+        </select>
+      </div>
+      <input type="text" class="dailytext" name="itembought" value="Enter Text">
+      <input type="text" class="dailytext" name="price" value="Amount">
+      <a data-toggle="collapse" data-target="#hideunhidei" ><i class="notes fas fa-sticky-note fa-2x "></i></a>
+      <div id="hideunhidei" class="collapse"><textarea  name="description" rows="1" cols="40" >Describe here</textarea></div>
+      <div > <button  type="submit" class="formbutton" name="button">+</button> </div>
+    </form>
+  </div>
+
 
 <%- include('footer') -%>
