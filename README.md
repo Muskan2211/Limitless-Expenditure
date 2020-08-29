@@ -1,4 +1,4 @@
-###How to use
+### How to use
 * To use this project you should have installed Node first. If you do have Node installed fallow these steps:
 	1. **Download the Windows installer from the** [download link](https://nodejs.org/en/)
 	2. **Choose the LTS version**
